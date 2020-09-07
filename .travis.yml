@@ -3,8 +3,9 @@ cache:
 - bundler
 script:
 - bundler install
-- bin/rails db:create
-- bin/rails db:migrate
+- bundle exec rake db:create
+- bundle exec rake db:migrate
+- bundle exec rspec
 services:
 - postgresql
 deploy:
@@ -12,3 +13,5 @@ deploy:
   api_key:
     secure: ctzKBBKwBBDBaQGmYMz9UDHMKbD3QdeY2mHeQMcCvlNc1ih87K3850kkDO91bxfqCeLjA4uLgs8OTQU/hW6eX44Z4EVWzOdprohnuAH7LpMR827vKtJykznUcSfKI2kHMXy+uocaJpyJ4WqO3ZS7XU/csbZAEC8rTPd5BOOsJ+9VKhjQY0fzCiFo4c1V1uUUTLYxWjCLsdVxf1/DoQH13VZRnjZZELnnno2Cx/ATnMMha9s5HDSSMV1FhjhzmKCjSXowEtabSqCUk/8qkIVUDsSGbGk9ReZLJYRWFKe2qOvGeVMdUMXL3cSO1WP/xVdtPlD/VnbPsWdAPHO1mjUebdAB0Nd+NTM2mETkiJLBkg0ZffN4WEkHIsg0nrgEIUiM4nKLgjJ83Q1ep89u2d1Nd8+gSKXvKi/hcT2VSWARameVJu/ga1taK2Fb9fLtLLZayYmL0g+5rKzum77iM+9/woFMvQBOunfj/hx1RLLYMJhpLZxvdGPh1zDTecLBgsRCnNYFpnrXbaqgI7AOlQjYB3BH9ExRH1TU8zALAIYTGR722NX31fdGxYnwE/8+jiaQYDuhFcYmsPoljWFKSf2WQ2i2YWF58iixkUFBCCNIGnwnkkKItc/sBksBr24Ht6MNWJBBIrlCfMrAG+u4pXU/LzNXTGyZZBWKh4aSKhbPqNY=
   app: leoncruz-ideasapp
+  on:
+    repo: LeonCruz/railsgirls-tutorial
